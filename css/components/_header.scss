@@ -1,0 +1,29 @@
+.header{
+    
+    background-color: $dark-black;
+    background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // opacity: 0.5;
+
+        &__ttl{
+            font-family: 'Crimson Text', serif;
+            text-transform: uppercase;
+            margin-top: .5rem;
+            font-size: min(8vw, 2.5rem);
+        }
+    
+        &__subttl{
+            font-family: 'Kurale', serif;
+            color: $byzantium;
+            margin-bottom: 0.5rem;
+            font-size: min(6.5vw, 2rem);
+        }
+
+}
+.test{
+    color:black;
+}

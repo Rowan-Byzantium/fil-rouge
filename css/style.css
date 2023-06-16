@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+:root {
+    font-size: 16px;
+    --byzantium:#702963;
+    --dark-byzantium:#5D3954;
+    --light-black: #313131;
+    --medium-black: #292929;
+    --dark-black:#1F1F1F;
+    --white:#FFF;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+ul,
+li,
+figure,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--light-black);
+    color:var(--white)
+}
+
+/* header */
+
+.header{
+    background-color: var(--dark-black);
+    background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header__ttl{
+    font-family: 'Crimson Text', serif;
+    text-transform: uppercase;
+    margin-top: .5rem;
+}
+
+.header__subttl{
+    font-family: 'Kurale', serif;
+    color: var(--byzantium);
+    margin-bottom: 0.5rem;
+}
+
+
+/* sorter filter */
+
+.sorter-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--dark-black);
+    margin: .5rem 0;
+    padding: .5rem;
+}
+
+.sorter-filter__btn{
+    display: inline;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+
+/* repertory */
+
+.repertory{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:1280px) {
+    .repertory{
+        display: grid;
+    }
+}
+
+.repertory__lst{}
+
+.character-card{
+    background-color: rgba(51, 204, 204, 0.5);
+    /* width: 300px;
+    aspect-ratio: 9 / 10 ; */
+    width: 310px;
+    height: 350px;
+    /* possible aspect ratio pour la taille, min/max pour changer la taille selon écran. */
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border-radius: 1rem;
+}
+
+/* @media screen and (min-width:1280px){
+   .repertory__itm{
+    height: calc(50% - 0.5rem);
+   } 
+} */
+
+
+.character-card__img{
+    width: calc(50% - 0.5rem);
+}
+
+.character-card__txt{
+    font-size: 1.5rem;
+}
+
+.character-card__txt--img-right{
+    font-size: 2rem;
+    width: calc(50% - 0.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: space-between; */
+}
+
+
+.character-card__txt--bottom{
+    font-size: 2rem;
+}
+
+.character-card__lst{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: flex-end;
+}
+
+.character-card__itm:not(:last-child)::after{
+    content: "·";
+    padding: 0.5rem;
+}
+
+.character-card__itm{
+    /* font-size: 2rem; */
+}
+
+.character-card__txt--name{
+    font-size: 2rem;
+    align-self: center;
+}
+
+/* footer */

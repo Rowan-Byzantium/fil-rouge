@@ -1,0 +1,12 @@
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-byzantium-transparent;
+    color: $white;
+    border: solid $white;
+    padding: 1rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .5rem;
+}

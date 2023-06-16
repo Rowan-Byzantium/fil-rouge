@@ -1,0 +1,40 @@
+.repertory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__lst{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    
+        @media screen and (min-width: $breakpoint-md) {
+            // flex-direction: row;
+            // flex-wrap : wrap;
+            // justify-content: space-between;
+            // width: calc(100%-3rem);
+            display: grid;  
+            gap: 1rem;
+            width:100%;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @media screen and (min-width: $breakpoint-xxl) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+}
