@@ -6,6 +6,15 @@
     flex-wrap: wrap;
     gap: .5rem;
     border-radius: 1rem;
+    background-color: rgba(31, 31, 31, 0.5);
+    
+    &--admin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
 
     &__img{
         width: calc(50% - 0.5rem);
@@ -13,7 +22,7 @@
         filter: grayscale(100%);
         aspect-ratio: 5/8;
     }
-
+    
     &__txt{
         font-size: 1.5rem;
         display: flex;
@@ -39,7 +48,7 @@
 
         &--credit{
             width: 100%;
-            font-size: 0.5rem;
+            font-size: 0.8rem;
         }
     }
 
@@ -60,13 +69,6 @@
         }
     }
 
-    &--admin{
-        background-color: $dark-black-transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 
 
     &--fao{
@@ -88,13 +90,18 @@
         background-color: rgba(96, 47, 107, 0.5);
     }
     &--blade{
-        background-color: rgba(136, 8, 8, 0.5);
+        background-color: rgba(135, 8, 8, 0.5);
     }
     &--theo{
         background-color: rgba(125, 104, 86, 0.5);
     }
-
+    
+    &--active{
+        opacity: 1;
+    }
     &--iddle{
         opacity: 0.5;
     }
+    
+    //appliquer une opacité sur juste la couleur de fond
 }

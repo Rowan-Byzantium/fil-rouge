@@ -77,7 +77,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgba(31, 31, 31, 0.7);
+  background-color: rgba(31, 31, 31, 0.5);
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
@@ -151,6 +151,13 @@ body {
   flex-wrap: wrap;
   gap: 0.5rem;
   border-radius: 1rem;
+  background-color: rgba(31, 31, 31, 0.5);
+}
+.character-card--admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .character-card__img {
   width: calc(50% - 0.5rem);
@@ -180,7 +187,7 @@ body {
 }
 .character-card__txt--credit {
   width: 100%;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 .character-card__lst {
   list-style: none;
@@ -195,13 +202,6 @@ body {
 .character-card__itm:not(:last-child)::after {
   content: "·";
   padding: 0.5rem;
-}
-.character-card--admin {
-  background-color: rgba(31, 31, 31, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 .character-card--fao {
   background-color: rgba(51, 204, 204, 0.5);
@@ -222,10 +222,13 @@ body {
   background-color: rgba(96, 47, 107, 0.5);
 }
 .character-card--blade {
-  background-color: rgba(136, 8, 8, 0.5);
+  background-color: rgba(135, 8, 8, 0.5);
 }
 .character-card--theo {
   background-color: rgba(125, 104, 86, 0.5);
+}
+.character-card--active {
+  opacity: 1;
 }
 .character-card--iddle {
   opacity: 0.5;

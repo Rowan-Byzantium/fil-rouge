@@ -15,34 +15,48 @@
         <h2 class="header__subttl">La science de vos personnages</h2>
     </header>
     <a href="" class="deconnect"></a>
+
+    <?php
+    require 'php/_connection-dtb.php';
+    require 'php/_queries.php';
+    require 'php/_functions.php';
+    // require "_queryordername.php";
+    require '_queryorderforum.php';
+
+    // foreach ($characters as $character){
+    // $characterId = $character['id_characters'];
+    // $characterName = $character['name'];
+    // $faceclaim = $character['name'];
+    // $age = $character['age'];
+    // $credit = $character['credit'];
+    // $status = $character['status_name'];
+    // $gender = $character['gender'];
+    // $faction = $character['faction'];
+    // $forum = $character['forum_name'];
+    // }
+    ?>
+
     <section class="filter">
-        <button class="filter__btn filter__txt" id="filter-txt">Forum</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Nom</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Âge</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Genre</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Chronologique</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Statut</button>
-        <button class="filter__btn filter__txt" id="filter-txt">Couleur</button>
+        <a href="php/_queryorderforum.php" class="filter__btn filter__txt" id="filterForum">Forum</a href="">
+        <a href="php/_queryordername.php" class="filter__btn filter__txt" id="filterName">Nom</a href="">
+        <a href="php/_queryorderage.php" class="filter__btn filter__txt" id="filterAge">Âge</a href="">
+        <a href="php/_queryordergender.php" class="filter__btn filter__txt" id="filterGender">Genre</a href="">
+        <a href="php/_queryordercreation.php" class="filter__btn filter__txt" id="filterCreateOrder">Chronologique</a href="">
+        <a href="php/_queryorderstatus.php" class="filter__btn filter__txt" id="filterStatus">Statut</a href="">
+        <!-- <button class="filter__btn filter__txt" id="filterColors">Couleur</button> -->
     </section>
     <section class="repertory">
         <ul class="repertory__lst">
-            <li class="repertory__cont">
-                <div class="character-card character-card--alex character-card--iddle">
-                    <img class="character-card__img" src="https://images2.imgbox.com/e2/dd/wYJiy5Gc_o.png" alt="ava">
-                    <div class="character-card__txt--img-right">
-                        <p class="character-card__txt--name">Alexander</p>
-                        <ul class="character-card__lst">
-                            <li class="character-card__itm repertory__txt">M</li>
-                            <li class="character-card__itm repertory__txt">23</li>
-                            <li class="character-card__itm repertory__txt">conservateur</li>
-                        </ul>
-                        <p class="character-card__txt--credit">smmg</p>
-                    </div>
-                    <p class="character-card__txt">Lee Felix (Yongbok)</p>
-                    <p class="character-card__txt--bottom">Maleficis Ambulare</p>
-                </div>
-            </li>
-            <li class="repertory__cont">
+            <?php
+            echo getListofCharacters($characters);
+            // var_dump($_GET['filter'])
+            // if (array_key_exists('filter', $_GET) && $_GET['filter'] = 'forum') {
+            //     echo getListofCharacters($charactersFo);
+            // } else {
+            //     echo getListofCharacters($characters);
+            // };
+            ?>
+            <!-- <li class="repertory__cont">
                 <div class="character-card character-card--blade character-card--iddle">
                     <img class="character-card__img"
                         src="https://64.media.tumblr.com/085ecaa631674b3144ddfc986bd82a1c/9003cdf57b9bf0d2-64/s500x750/c4a24d67ae1707ca2e0f1e50afeb0ebc415d4695.pnj"
@@ -52,7 +66,7 @@
                         <ul class="character-card__lst">
                             <li class="character-card__itm">M</li>
                             <li class="character-card__itm">30</li>
-                            <li class="character-card__itm">Zhang Family</li>
+                            <li class="character-card__itm">The Outsiders</li>
                         </ul>
                         <p class="character-card__txt--credit">sneakyskunk</p>
                     </div>
@@ -70,7 +84,7 @@
                         <ul class="character-card__lst">
                             <li class="character-card__itm repertory__txt">NB</li>
                             <li class="character-card__itm repertory__txt">361</li>
-                            <li class="character-card__itm repertory__txt"> St-John Casino </li>
+                            <li class="character-card__itm repertory__txt">The Damned</li>
                         </ul>
                         <p class="character-card__txt--credit">solarismess</p>
                     </div>
@@ -147,7 +161,7 @@
                     <p class="character-card__txt">Gemma Cowling</p>
                     <p class="character-card__txt--bottom">Whisper in the Night</p>
                 </div>
-            </li>
+            </li>-->
             <li class="repertory__cont">
                 <div class="character-card character-card--admin">
                     <button class="character-card__txt button">add character</button>
@@ -160,4 +174,5 @@
     <footer class="footer"></footer>
     <script type="text/javascript" src="js/javascript.js"></script>
 </body>
+
 </html>
