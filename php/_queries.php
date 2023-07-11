@@ -4,12 +4,12 @@ require '_connection-dtb.php';
 require '_functions.php';
 
 if (array_key_exists('sorter', $_GET)){
-    sortCharacters(strip_tags($_GET['sorter']));
-    return $characters;
+    return getListofCharacters(sortCharacters($_GET['sorter']));
+    // sortCharacters(strip_tags($_GET['sorter']));
+    // return $characters;
 }
 else {
-    sortCharacters('name');
-    return $characters;
+    return getListofCharacters(sortCharacters('name'));
 }
 
 

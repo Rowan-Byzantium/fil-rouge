@@ -26,29 +26,32 @@ function getListofCharacters(array $array)
     return $li;
 };
 
-function sortCharacters(string $sorter)
+function sortCharacters(string $sorter) : array
 {
     require 'php/_connection-dtb.php';
+    $sorters = ['name', 'forum_name', 'age', 'id_gender', 'id_characters', 'id_status'];
+    if (in_array(strip_tags($sorter), $sorters)) {
+        $query = $dbCo->prepare(
+            "SELECT `id_characters`,`name`,`faceclaim`,`credit`,`age`, `gender`, `faction`, `forum_name`, `status_name`
+            FROM `characters`
+            JOIN `belong` USING (id_characters)
+            JOIN `faction` USING (id_faction)
+            JOIN `divide` USING (id_faction)
+            JOIN `universe` USING (id_universe)
+            JOIN `gender` USING (id_gender)
+            JOIN `status` USING (id_status)
+            
+            ORDER BY {$sorter}, `name` ASC"
+        );
+        $isOk = $query->execute();
 
-    $query = $dbCo->prepare(
-    "SELECT `id_characters`,`name`,`faceclaim`,`credit`,`age`, `gender`, `faction`, `forum_name`, `status_name`
-    FROM `characters`
-	JOIN `belong` USING (id_characters)
-    JOIN `faction` USING (id_faction)
-    JOIN `divide` USING (id_faction)
-    JOIN `universe` USING (id_universe)
-    JOIN `gender` USING (id_gender)
-    JOIN `status` USING (id_status)
-    
-    ORDER BY (:order), `name` ASC"
-    );
-    $isOk = $query->execute([
-        'order' => $sorter
-    ]);
+        $characters = $query->fetchAll();
+    }
 
-    $characters = $query->fetchAll();
+    return $characters;
 }
-
+//faire une variable php à la place du :order, très sécurisé, strip tags and everything
+//faire un array des possibilités par lesquelles on peut trier 
 
         // foreach ($characters as $character){
     // $characterId = $character['id_characters'];

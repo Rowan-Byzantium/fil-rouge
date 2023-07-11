@@ -27,18 +27,19 @@
 
     <section class="filter">
         <a href="index.php?sorter=forum_name" class="filter__btn filter__txt" id="filterForum">Forum</a href="">
-        <a href="index.php" class="filter__btn filter__txt" id="filterName">Nom</a href="">
-        <a href="index.php" class="filter__btn filter__txt" id="filterAge">Âge</a href="">
-        <a href="index.php" class="filter__btn filter__txt" id="filterGender">Genre</a href="">
-        <a href="index.php" class="filter__btn filter__txt" id="filterCreateOrder">Chronologique</a href="">
-        <a href="index.php" class="filter__btn filter__txt" id="filterStatus">Statut</a href="">
+        <a href="index.php?sorter=name" class="filter__btn filter__txt" id="filterName">Nom</a href="">
+        <a href="index.php?sorter=age" class="filter__btn filter__txt" id="filterAge">Âge</a href="">
+        <a href="index.php?sorter=id_gender" class="filter__btn filter__txt" id="filterGender">Genre</a href="">
+        <a href="index.php?sorter=id_characters" class="filter__btn filter__txt" id="filterCreateOrder">Chronologique</a href="">
+        <a href="index.php?sorter=id_status" class="filter__btn filter__txt" id="filterStatus">Statut</a href="">
         <!-- <button class="filter__btn filter__txt" id="filterColors">Couleur</button> -->
     </section>
     <section class="repertory">
         <ul class="repertory__lst">
             <?php
-            echo getListofCharacters($characters);
 
+            // var_dump(sortCharacters('forum_name'))
+            echo getListofCharacters(sortCharacters('forum_name'));
             // var_dump($_GET['filter'])
             // if (array_key_exists('filter', $_GET) && $_GET['filter'] = 'forum') {
             //     echo getListofCharacters($charactersFo);
