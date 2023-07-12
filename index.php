@@ -18,10 +18,10 @@
 
     <?php
     require 'php/_connection-dtb.php';
-    require 'php/_queries.php';
     require_once 'php/_functions.php';
+    // require 'php/_queries.php';
     // require "php/_queryordername.php";
-    require 'php/_queryorderforum.php';
+    // require 'php/_queryorderforum.php';
 
     ?>
 
@@ -38,14 +38,13 @@
         <ul class="repertory__lst">
             <?php
 
-            // var_dump(sortCharacters('forum_name'))
-            echo getListofCharacters(sortCharacters('forum_name'));
-            // var_dump($_GET['filter'])
-            // if (array_key_exists('filter', $_GET) && $_GET['filter'] = 'forum') {
-            //     echo getListofCharacters($charactersFo);
-            // } else {
-            //     echo getListofCharacters($characters);
-            // };
+            if (array_key_exists('sorter', $_GET)) {
+               echo getListofCharacters(sortCharacters($_GET['sorter']));
+            } else {
+               echo getListofCharacters(sortCharacters('name'));
+            }
+            
+            
             ?>
             <li class="repertory__cont">
                 <div class="character-card character-card--admin">

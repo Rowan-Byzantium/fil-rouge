@@ -46,10 +46,13 @@ function sortCharacters(string $sorter) : array
         $isOk = $query->execute();
 
         $characters = $query->fetchAll();
+    } else {
+        echo 'impossible de trier les personnages dans cet ordre là.';
     }
 
     return $characters;
 }
+
 //faire une variable php à la place du :order, très sécurisé, strip tags and everything
 //faire un array des possibilités par lesquelles on peut trier 
 
